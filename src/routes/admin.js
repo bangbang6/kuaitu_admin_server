@@ -34,7 +34,12 @@ router.post('/login', genValidator(adminInfoSchema), async ctx => {
 // 初始化几个管理员账号
 ;(async function createTestAdminForDev() {
     if (isPrd) {
-        // 生产环境下
+        const username = '梦晚'
+        const password = '123456'
+        await register(username, password)
+        console.log(
+            `================== 管理员账户：用户名 ${username} 密码 ${password} ==================`
+        )
     } else {
         // 非生产环境
         const username = 'hello'
