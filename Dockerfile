@@ -7,6 +7,8 @@ COPY . /app
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
 
 # 安装
+RUN npm cache clean -f 
+RUN npm install -g npm
 RUN npm config set registry https://registry.npmmirror.com
 RUN npm i
 
