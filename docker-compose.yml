@@ -6,5 +6,7 @@ services:
             dockerfile: Dockerfile
         image: admin-server # 依赖于当前 Dockerfile 创建镜像
         container_name: admin-server
+        extra_hosts:
+            - host.docker.internal:host-gateway
         ports:
             - 8084:3003 # 宿主机通过 8084 访问

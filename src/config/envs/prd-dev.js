@@ -1,12 +1,15 @@
 const devConf = require('./dev')
 
 Object.assign(devConf.redisConf, {
-    host: 'editor-redis', //host改为docker容器
+    host: 'host.docker.internal', //host改为docker容器
+    port: '6378',
 })
 Object.assign(devConf.mysqlConf, {
-    host: 'editor-mysql', //host改为docker容器
+    host: 'host.docker.internal', //host改为docker容器
+    port: '3305',
 })
 Object.assign(devConf.mongodbConf, {
-    host: 'editor-mongo', //host改为docker容器
+    host: 'host.docker.internal', //host改为docker容器
+    port: '27016',
 })
 module.exports = devConf
