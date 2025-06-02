@@ -8,7 +8,6 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shangh
 
 # 安装
 RUN npm cache clean -f 
-RUN npm config set registry https://registry.npmmirror.com
 RUN npm i
 
 # 宿主机 ip 指向 docker-host ，以方便 docker 内部访问宿主机
